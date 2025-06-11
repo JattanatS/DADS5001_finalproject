@@ -6,3 +6,5 @@ protobuf==6.31.1
 pymongo==4.13.0
 scikit_learn==1.7.0
 streamlit==1.45.1
+google-generative-ai
+google-genai
