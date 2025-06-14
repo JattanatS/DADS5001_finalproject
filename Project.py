@@ -314,7 +314,7 @@ if "fig5_state" not in st.session_state:
             name=f"Group {group}",
             hoverinfo="label+percent+value",
             color_discrete_sequence=px.colors.qualitative.Plotly,
-            sort = False
+            sort = "FALSE"
         ), row=1, col=i+1)
     st.session_state["fig5_state"] = fig5
 
