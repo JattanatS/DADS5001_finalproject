@@ -19,8 +19,7 @@ from google import genai
 
 gemini_client = genai.Client(api_key=st.secrets["YOUR_API_KEY"])
 
-if "fig5_state" in st.session_state:
-    del st.session_state["fig5_state"]
+st.session_state.pop("fig5_state", None)
 
 
 @st.cache_data
