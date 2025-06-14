@@ -19,9 +19,6 @@ from google import genai
 
 gemini_client = genai.Client(api_key=st.secrets["YOUR_API_KEY"])
 
-for key in list(st.session_state.keys()):
-    if key.startswith("fig5"):
-        del st.session_state[key]
 
 
 @st.cache_data
@@ -301,7 +298,7 @@ nosql_result.sort_values(by="Group", inplace=True)
 st.header("Data analysis with NoSQL (mongodb) : วิเคราะห์การใช้งานตามกลุ่ม Cluster")
 
 groups = nosql_result['Group'].unique()
-if "fig5_state" not in st.session_state:
+if "fig5_state" in st.session_state:
     fig5 = make_subplots(rows=1, 
                         cols=len(groups), 
                         specs=[[{'type': 'domain'}]*len(groups)],
