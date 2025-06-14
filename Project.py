@@ -304,7 +304,6 @@ if "fig5_state" not in st.session_state:
                         specs=[[{'type': 'domain'}]*len(groups)],
                         subplot_titles=[f"Group: {g}" for g in groups],
                         color_discrete_sequence=px.colors.qualitative.Plotly,
-                        sort = "FALSE"
                         )
 ####
     for i, group in enumerate(groups):
@@ -314,7 +313,8 @@ if "fig5_state" not in st.session_state:
             labels=df_group['Cluster'],
             values=df_group['count'],
             name=f"Group {group}",
-            hoverinfo="label+percent+value"
+            hoverinfo="label+percent+value",
+            sort = False
         ), row=1, col=i+1)
     st.session_state["fig5_state"] = fig5
 
