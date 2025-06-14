@@ -18,6 +18,7 @@ import plotly.graph_objects as go
 from google import genai
 
 gemini_client = genai.Client(api_key=st.secrets["YOUR_API_KEY"])
+st.session_state.clear()
 
 
 @st.cache_data
