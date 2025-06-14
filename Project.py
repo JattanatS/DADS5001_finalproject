@@ -18,7 +18,6 @@ import plotly.graph_objects as go
 from google import genai
 
 gemini_client = genai.Client(api_key=st.secrets["YOUR_API_KEY"])
-st.session_state.clear()
 
 
 @st.cache_data
@@ -263,8 +262,7 @@ if "fig4_state" not in st.session_state:
                 x='Charging Speed (kW)',
                 y='avg("Charging Amount (kWh)")',
                 hover_data=["cluster"],
-                color="cluster",
-                color_discrete_sequence=px.colors.qualitative.Plotly)
+                color="cluster")
     st.session_state["fig4_state"] = fig4
 
 st.plotly_chart(st.session_state["fig4_state"])
@@ -354,5 +352,4 @@ else:
 
 st.plotly_chart(st.session_state["fig5_state"])
 st.dataframe(nosql_result, hide_index=True)
-
 
