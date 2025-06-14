@@ -19,6 +19,10 @@ from google import genai
 
 gemini_client = genai.Client(api_key=st.secrets["YOUR_API_KEY"])
 
+for key in list(st.session_state.keys()):
+    if key.startswith("fig5"):
+        del st.session_state[key]
+
 
 @st.cache_data
 def load_data():
