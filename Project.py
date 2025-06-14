@@ -302,9 +302,9 @@ if "fig5_state" not in st.session_state:
     fig5 = make_subplots(rows=1, 
                         cols=len(groups), 
                         specs=[[{'type': 'domain'}]*len(groups)],
-                        subplot_titles=[f"Group: {g}" for g in groups],
+                        subplot_titles=[f"Group: {g}" for g in groups]
                         )
-####
+
     for i, group in enumerate(groups):
         df_group = nosql_result[nosql_result['Group'] == group]
 
