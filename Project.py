@@ -262,7 +262,8 @@ if "fig4_state" not in st.session_state:
                 x='Charging Speed (kW)',
                 y='avg("Charging Amount (kWh)")',
                 hover_data=["cluster"],
-                color="cluster")
+                color="cluster",
+                color_discrete_sequence=px.colors.qualitative.Plotly)
     st.session_state["fig4_state"] = fig4
 
 st.plotly_chart(st.session_state["fig4_state"])
