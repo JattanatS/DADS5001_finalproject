@@ -304,7 +304,7 @@ if "fig5_state" not in st.session_state:
                         specs=[[{'type': 'domain'}]*len(groups)],
                         subplot_titles=[f"Group: {g}" for g in groups],
                         color_discrete_sequence=px.colors.qualitative.Plotly,
-                        sort = FALSE
+                        sort = "FALSE"
                         )
 ####
     for i, group in enumerate(groups):
